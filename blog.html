@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+
+    <script src='https://kit.fontawesome.com/8ffef1b7fa.js' crossorigin='anonymous'></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:400,700&display=swap" rel="stylesheet">
+
+
+    <link rel='stylesheet' href='./styles/style.css'>
+
+</head>
+<body class="blogPage" id="blog">
+    <header class="header blogHeader">
+        <nav>
+            <ul>
+                <li><a href='./home.html'>Home</a></li>
+                <li><a href='#about'>About</a></li>
+                <li><h2>willow</h2></li>
+                <li><a href='#blog'>blog</a></li>
+                <li><a href='./contact.html'>Contact</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <h1 class="title">blog & news</h1>
+        </div>
+    </header>
+    <div class="wrapper">
+        <aside>
+            <div class="aboutMe">
+                <img src="./assets/blog-image-2.jpg" alt="Willow looking through verdant fern leaves wearing my trademark yellow rain jacket">
+                <h3>about willow</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque dicta nihil aperiam?<a class="secondaryLink" href="#about">find out more</a></p>
+            </div>
+            <div class="recentPosts">
+                <h3>recent posts</h3>
+                <ul>
+                    <li>Donec facilis tortur ut</li>
+                    <li>Augue lacinia at viverra</li>
+                    <li>Semper sed sapien</li>
+                    <li>Scelerisque nec pharetra</li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <section class="fullBlogPost">
+                <h2>my favourite travel desitnations</h2>
+                <p> Monday <time datetime="2018-10-8">October 8th, 2018 </time>by Willow </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptate debitis, libero ipsum sapiente unde inventore vero, praesentium reprehenderit incidunt laudantium fugit similique possimus mollitia eaque, itaque fugiat! Atque, aut?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error possimus corporis distinctio officia, fuga et illum molestias, modi repellat id ex natus fugiat dolorem, tempore non veniam! Eligendi, nostrum perspiciatis. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum dolor eligendi aperiam amet culpa? Animi, earum incidunt dignissimos delectus eum non ab pariatur. Voluptatibus neque doloribus nihil, veniam deleniti repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam modi suscipit enim necessitatibus sunt quasi error harum eum corporis eligendi aperiam ab labore eius sit, laboriosam, quod cupiditate vitae quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nostrum eius iusto repellendus perspiciatis possimus assumenda, omnis iste beatae unde hic incidunt placeat. Delectus, laboriosam atque autem praesentium impedit animi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto autem sit sunt labore enim deserunt?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit esse praesentium eos aspernatur voluptatibus odit, quod velit aliquid incidunt, repellat est exercitationem nisi illum minima eum adipisci harum numquam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore accusantium fuga voluptatum alias laborum exercitationem explicabo ipsa totam tempora ullam. Ad nemo nam odio animi ex sint aliquid officiis atque! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut eum assumenda inventore vitae.</p>
+            </section>
+            <section class="commentSection">
+                <div class="comment commentOne">
+                    <img src="./assets/blog-image-3.jpg" alt="Barb wearing a hipster hat holding her hair back">
+                    <div class="commentTextContainer">
+                        <p>Tuesday <time datetime="2018-10-9">Octover 9th, 2018 </time>by Barb</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, nesciunt ea maiores ratione similique ex ab culpa obcaecati quibusdam mollitia nam eaque eveniet sunt ut veniam error quasi itaque tempore!</p>
+                    </div>
+                </div>
+                <div class="comment commentTwo">
+                    <img src="./assets/blog-image-4.jpg" alt="Daisy smiling and looking through lush greenery">
+                    <div class="commentTextContainer">
+                        <p>Wednesday <time datetime="2018-10-10">Octover 10th, 2018 </time>by Daisy</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, nesciunt ea maiores ratione similique ex ab culpa obcaecati quibusdam mollitia nam eaque eveniet sunt ut veniam error quasi itaque tempore!</p>
+                    </div>
+                </div>
+            </section>
+            <form action="#" name="postComment">
+                <label for="blogName" class="srOnly">enter your full name</label>
+                <input type="text" value="Name" id="blogName" class="name">
+                <label for="blogEmail" class="srOnly">enter your email address</label>
+                <input type="email" value="Email address" id="blogEmail" class="email">
+                <label for="comments" class="srOnly">write your comment here</label>
+                <textarea name="comments" id="comments" class="content">Comment</textarea>
+                <button type="submit" class="primaryLink">post comment</button>
+            </form>
+        </main>
+    </div> <!--end wrapper-->
+
+    <footer>
+        <p>copyright &copy 2020 Nick Reyno</p>
+    </footer>
+</body>
+</html>

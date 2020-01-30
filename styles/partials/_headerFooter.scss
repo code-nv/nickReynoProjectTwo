@@ -1,0 +1,127 @@
+nav {
+    font-family: $bodyStack;
+    color: $white;
+    font-size: calc(0.2rem + 1vw);
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+
+    ul {
+        @include flexRow;
+    }
+
+    a {
+        padding: 20px 1.5vw;
+    }
+}
+
+.header {
+    background: $pine;
+    // height: 85vh;
+
+    &FlexParent {
+        @include flexRow;
+    }
+
+    .profilePhoto {
+        // height: 78vh;
+        width: 30vw;
+        min-width: 20rem;
+        position: relative;
+        right:-2vw;
+        top:5vw;
+        box-shadow: 1.2vw 1.5vw 0 white;
+    }
+
+    .titlePhoto {
+        position: absolute;
+        top:-3rem;
+        left:-4rem;
+        // height: calc(10rem + 3vw);
+        width:10rem;
+    }
+}
+
+.blogPage header {
+    background: url(../assets/blog-image-1.jpg);
+}
+
+.contactPage header {
+    background: url(../assets/contact-image-1.jpg);
+}
+
+.blogPage,
+.contactPage {
+
+    header {
+        @include flexCol(space-between);
+        overflow-y: hidden;
+        background-position: 25%;
+        background-size: cover;
+        height: 375px;
+        width:100vw;
+        }
+
+    nav {
+        background: $pine;
+    }
+    
+
+}
+
+
+// footer styles
+
+.home footer {
+    margin-top: 0;
+}
+
+footer {
+    margin-top: 100px;
+    background: $black;
+
+    p {
+        @include flexRow;
+        margin:0;
+        line-height: 2;
+        color: $white;
+    }
+}
+
+// MEDIA QUERIES
+
+@include mq1000 {
+
+    nav {
+        font-size: calc(0.7rem + 1vw);
+
+        h2 {
+            font-size: calc(1.5rem + 1.8vw);
+        }
+    }
+
+    .home {
+
+        h1 {
+            font-size: 8rem;
+        }
+
+        .titlePhoto {
+            width: 7rem;
+            left: -3rem;
+            top: -2rem;
+        }
+    }
+}
+
+@include mq800 {
+    .headerFlexParent {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .header .profilePhoto {
+        right:0;
+        top:0;
+    }
+}

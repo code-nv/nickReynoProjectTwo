@@ -1,0 +1,33 @@
+form {
+    @include flexRow(space-between);
+    flex-wrap: wrap;
+    font-size: calc(0.4rem + 1vw);
+    width:100%;
+    padding:0;
+    
+    .name,
+    .email {
+        width:48%;
+        padding: 20px;
+        margin:0;
+        border: none;
+        font-family: $bodyStack;
+    }
+    label {
+        position: absolute;
+    }
+    
+    textarea {
+        width: 100%;
+        margin: 20px 0;
+        padding: 20px;
+        min-height: 40vh;
+        border:none;
+        resize: none;
+        font-family: $bodyStack;
+    }
+
+    .primaryLink {
+        width: 100%;
+    }
+}

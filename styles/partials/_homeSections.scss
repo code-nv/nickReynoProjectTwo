@@ -1,0 +1,288 @@
+.about {
+    padding: 120px 0;
+    @include flexCol;
+    text-align: center;
+    background: $white;
+
+    @include mq800 {
+        padding: 60px 0;
+    }
+}
+
+
+// blog
+.blog {
+    &Post {
+        @include flexRow;
+        flex-wrap: wrap;
+        width:100%;
+        margin: 0 auto;
+        background: white;
+        padding-bottom:50px;
+
+        @include mq800 {
+            padding: 0;
+        }
+    }
+
+    &Post2 {
+        padding-bottom:10px;
+    }
+
+
+    // width is 42.5vw b/c of wrapper
+    &Post1Img,
+    &Post2Img {
+        position: relative;
+        width: 50%;
+    }
+
+    &Post img {
+        position: relative;
+        top: -3.5vw;
+        width: 100%;
+    }
+
+    &Post1 img {
+        box-shadow: 1.2vw 1.5vw $green, -10vw 1.5vw $green;
+    }
+
+    &Post2 img {
+        top: 3.5vw;
+        box-shadow: 1.2vw 1.5vw $pine, 10vw 1.5vw $pine;
+    }
+
+    &PostTextContainer {
+        @include flexCol(flex-end);
+        align-items: flex-start;
+        width: 50%;
+        padding-left: 7vw;
+        align-self: stretch;
+        position: relative;
+        top:-2vw;
+    }
+
+    &Post2Img {
+        order:2; // to make image appear on right side
+    }
+
+    &Post2TextContainer {
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: right;
+        padding-left: 0;
+        padding-right: 7vw;
+        top: 3.5vw;
+    }
+
+    &Post3 {
+        @extend .padding;
+        background: $white;
+        justify-content: space-between;
+
+        .wrapper {
+            @include flexRow;
+            align-items: flex-start;
+        }
+
+        .imgContainer {
+            width: 25%;
+            padding-bottom: 1.5vw;
+            margin-right: 5%
+        }
+
+        img {
+            width:100%;
+            box-shadow: 1.2vw 1.5vw $green;
+        }
+
+        &TextContainer {
+            @include flexCol(space-between);
+            align-items: flex-start;
+            width: 65%;
+            margin-left: 5%;
+            align-self: stretch;
+        }
+
+        @include mq800 {
+            padding: 60px 0;
+        }
+    }
+
+    // media query
+    @include mq800 {
+
+        
+            background: $white;
+
+            &Post {
+                background: $white;
+
+                &1 {
+                    box-shadow: 20px 20px $green, -20vw 20px $green;
+                    margin-bottom: 10vw;
+                }
+
+                &2 {
+                    box-shadow: -20px 20px $pine, 20vw 20px $pine;
+                    padding-bottom: 0;
+                    margin-bottom: 20vw;
+                }
+            }
+
+            &Post1Img,
+            &Post2Img,
+            &PostTextContainer {
+                width:100%;
+                top:0;
+            }
+
+            &Post1Img {
+                background: $green;
+            }
+
+            &Post2Img {
+                order: initial;
+                background: $pine;
+            }
+
+            &Post img {
+                top: 0;
+                box-shadow: none;
+            }
+
+            &PostTextContainer {
+                align-items: center;
+                text-align: center;
+                background:white;
+                padding: 20px;
+            }
+
+            // post three (WILLOW'S JOURNEY)
+            &Post3 {
+                margin-bottom: 40px;
+
+                .wrapper {
+                    display: block;
+                    position: relative;
+                }
+
+                .imgContainer {
+                    position: absolute;
+                    float:left;
+                    width: 30%;
+                    margin:0;
+                    top: calc(-20vw + 15px);
+                    left: -2vw;
+                }
+
+                &TextContainer {
+                    width: 100%;
+                    margin:0;
+                    background: white;
+                    padding: 20px;
+
+                    h2 {
+                        margin-left: calc(35% - 2vw);
+                    }
+
+                    .primaryLink {
+                        align-self: center;
+                    }
+                }
+
+            }
+
+    } //end of mq800 media query
+
+    @include mq680 {
+
+        &Post2 {
+            margin-bottom: 10vw;
+        }
+
+        &Post3 .imgContainer {
+            top: calc(-20vw + 50px);
+        }
+
+    }
+} // end of blog
+
+
+// full bleed image
+.styleDivider {
+    background: url(../assets/home-image-5.jpg),$white;
+    background-size: cover;
+    background-position-x: 60%;
+    width: 100vw;
+    height: 50vh;
+}
+
+
+// gallery styles
+.gallery {
+
+    @extend .padding;
+
+    .wrapper {
+        @include flexRow;
+        justify-content: space-between;
+    }
+
+    img {
+        width: 31%
+    }
+
+    @include mq1000 {
+        padding: 60px 0;
+    }
+
+    @include mq800 {
+
+        padding: 20px 0;
+
+        .wrapper {
+            width: 100%;
+        }
+    }
+}
+
+.contact {
+
+    @extend .padding;
+    padding-bottom: 0;
+    background: $white;
+
+    h4 {
+        margin-top: 5px;
+    }
+
+    ul {
+        @include flexRow(space-between);
+        flex-wrap: wrap;
+    }
+
+    li {
+        width:48%;
+        margin-bottom: 50px;
+    }
+
+    .contactIcon {
+        display:block;
+        background: $accent;
+        font-size: 2rem;
+        padding: 1rem;
+        border-radius: 50px;
+        float:left;
+        margin-right: 4%;
+    }
+
+    p {
+        margin-left: calc(4rem + 4%);
+    }
+
+    @include mq800 {
+        padding: 60px 0 0 0;
+    }
+
+}
