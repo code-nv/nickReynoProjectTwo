@@ -35,7 +35,6 @@ $bodyStack: "Montserrat", sans-serif;
     }
 }
 
-
 @mixin mq800 {
     @media (max-width: 800px) {
         @content;
@@ -44,13 +43,28 @@ $bodyStack: "Montserrat", sans-serif;
 
 @mixin mq680 {
     @media (max-width: 680px) {
-        @content
+        @content;
+    }
+}
+
+@mixin mq600 {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin mq500 {
+    @media (max-width: 500px) {
+        @content;
     }
 }
 
 .padding {
     padding: 100px 0;
 }
+
+
+
 
 // special character apostrphy in willow's journey
 

@@ -9,7 +9,6 @@
     }
 }
 
-
 // blog
 .blog {
     &Post {
@@ -195,14 +194,34 @@
 
     } //end of mq800 media query
 
+    // .blog still
     @include mq680 {
 
         &Post2 {
-            margin-bottom: 10vw;
+            margin-bottom: 20px;
         }
 
-        &Post3 .imgContainer {
-            top: calc(-20vw + 50px);
+        &Post3 {
+            margin-bottom: 0;
+            padding: 20px 0;
+            text-align: center;
+
+            h2 {
+                margin: 0 auto;
+            }
+
+            .imgContainer {
+            float:none;
+            position: relative;
+            width: 50%;
+            top:0;
+            left: -0.4vw; //nudged to make it look centered with the shadow
+            margin: 0 auto;
+            }
+
+            &TextContainer {
+                box-shadow: 0px -100px white;
+            }
         }
 
     }
@@ -218,11 +237,16 @@
     height: 50vh;
 }
 
+.styleDividerMobile {
+    @extend .styleDivider;
+}
+
 
 // gallery styles
 .gallery {
 
     @extend .padding;
+    background: white;
 
     .wrapper {
         @include flexRow;
@@ -243,6 +267,15 @@
 
         .wrapper {
             width: 100%;
+        }
+    }
+
+    @include mq680 {
+
+        padding:0;
+    
+        img {
+            width: 33.33%;
         }
     }
 }
@@ -285,4 +318,41 @@
         padding: 60px 0 0 0;
     }
 
+    @include mq680 {
+        padding: 7vw 0 0 0;
+
+        h4 {
+            font-size: calc(1rem + 1.5vw);
+        }
+
+        ul {
+            display: block;
+        }
+
+        li {
+            width:100%;
+        }
+    }
+}
+
+@include mq500 {
+    .about,
+    .blog,
+    .contact {
+        .wrapper {
+            width:95%;
+        }
+    }
+
+    .styleDivider {
+        height: 30vh;
+    }
+
+    .styleDivider {
+        display: none;
+
+        &Mobile {
+            display: block;
+        }
+    }   
 }

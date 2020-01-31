@@ -259,6 +259,10 @@ html {
   letter-spacing: 1px;
 }
 
+body {
+  background: #F6F6F6;
+}
+
 h1,
 h2,
 h3,
@@ -354,6 +358,9 @@ aside {
 }
 
 @media (max-width: 1000px) {
+  .home h1 {
+    font-size: 8rem;
+  }
   p, .blogPage aside li, .address {
     font-size: calc(0.5rem + 1vw);
   }
@@ -368,6 +375,15 @@ aside {
   }
   p, .blogPage aside li, .address {
     font-size: calc(0.9rem + 1vw);
+  }
+}
+
+@media (max-width: 680px) {
+  .home h1 {
+    font-size: 6.5rem;
+  }
+  p, .blogPage aside li, .address {
+    font-size: calc(1.2rem + 1vw);
   }
 }
 
@@ -506,9 +522,6 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   }
   nav h2 {
     font-size: calc(1.5rem + 1.8vw);
-  }
-  .home h1 {
-    font-size: 8rem;
   }
   .home .titlePhoto {
     width: 7rem;
@@ -800,19 +813,40 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 
 @media (max-width: 680px) {
   .blogPost2 {
-    margin-bottom: 10vw;
+    margin-bottom: 20px;
+  }
+  .blogPost3 {
+    margin-bottom: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .blogPost3 h2 {
+    margin: 0 auto;
   }
   .blogPost3 .imgContainer {
-    top: calc(-20vw + 50px);
+    float: none;
+    position: relative;
+    width: 50%;
+    top: 0;
+    left: -0.4vw;
+    margin: 0 auto;
+  }
+  .blogPost3TextContainer {
+    -webkit-box-shadow: 0px -100px white;
+            box-shadow: 0px -100px white;
   }
 }
 
-.styleDivider {
+.styleDivider, .styleDividerMobile {
   background: url(../assets/home-image-5.jpg), #F6F6F6;
   background-size: cover;
   background-position-x: 60%;
   width: 100vw;
   height: 50vh;
+}
+
+.gallery {
+  background: white;
 }
 
 .gallery .wrapper {
@@ -850,6 +884,15 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   }
   .gallery .wrapper {
     width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .gallery {
+    padding: 0;
+  }
+  .gallery img {
+    width: 33.33%;
   }
 }
 
@@ -905,6 +948,38 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   }
 }
 
+@media (max-width: 680px) {
+  .contact {
+    padding: 7vw 0 0 0;
+  }
+  .contact h4 {
+    font-size: calc(1rem + 1.5vw);
+  }
+  .contact ul {
+    display: block;
+  }
+  .contact li {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .about .wrapper,
+  .blog .wrapper,
+  .contact .wrapper {
+    width: 95%;
+  }
+  .styleDivider, .styleDividerMobile {
+    height: 30vh;
+  }
+  .styleDivider, .styleDividerMobile {
+    display: none;
+  }
+  .styleDividerMobile {
+    display: block;
+  }
+}
+
 .blogPage > .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -942,11 +1017,6 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   background: #F6F6F6;
 }
 
-.blogPage aside img {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
 .blogPage .aboutMe,
 .blogPage .recentPosts {
   background: white;
@@ -976,6 +1046,15 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 .blogPage aside a {
   color: #709B6B;
   font-weight: bold;
+}
+
+.blogPage aside .mobileLink {
+  display: none;
+}
+
+.blogPage aside img {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .fullBlogPost {
@@ -1021,8 +1100,160 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   margin: 0;
 }
 
-.comment:last-of-type {
+.commentTwo {
   border-bottom: 5px solid #709B6B;
+}
+
+@media (max-width: 1000px) {
+  .blogPage aside ul {
+    padding-left: 10px;
+    text-align: left;
+  }
+  .blogPage aside li {
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .blogPage h2 {
+    font-size: calc(1.2rem + 1.8vw);
+  }
+  .blogPage h3 {
+    font-size: calc(0.5rem + 1.5vw);
+  }
+  .blogPage aside {
+    text-align: center;
+  }
+  .blogPage .wrapper {
+    width: 95%;
+  }
+  .blogPage .aboutMe,
+  .blogPage .recentPosts,
+  .blogPage .fullBlogPost,
+  .blogPage .comment {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .blogPage .wrapper {
+    width: 98%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blogPage header {
+    height: 30vh;
+  }
+  .blogPage main {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    width: 100%;
+    margin: 0;
+    padding-top: 20px;
+  }
+  .blogPage aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 20px 20px 0;
+  }
+  .blogPage aside img {
+    float: left;
+    width: 50%;
+  }
+  .blogPage aside .aboutMe {
+    width: 65%;
+    margin-bottom: 0;
+  }
+  .blogPage aside .recentPosts {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .blogPage aside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .blogPage aside p, .blogPage aside li, .blogPage aside .address {
+    font-size: 1.55rem;
+  }
+  .blogPage aside img {
+    width: 150px;
+    margin-right: 20px;
+  }
+  .blogPage aside .aboutMe {
+    text-align: left;
+    padding-bottom: 0;
+    width: 100%;
+  }
+  .blogPage aside .recentPosts {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .blogPage aside .recentPosts ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-left: 0;
+  }
+  .blogPage aside .recentPosts li {
+    text-align: center;
+    padding-left: 0;
+    list-style-type: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .blogPage aside .recentPosts ul {
+    display: block;
+  }
+  .blogPage aside .recentPosts li {
+    text-align: left;
+    margin-left: 25%;
+    list-style-type: disc;
+  }
 }
 
 form {

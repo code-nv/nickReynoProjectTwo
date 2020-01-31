@@ -25,14 +25,6 @@
         background: $white;
     }
 
-    aside {
-        
-        img {
-            width: 100%;
-            margin-bottom: 30px;
-        }
-    }
-
     .aboutMe,
     .recentPosts {
         background: white;
@@ -67,6 +59,15 @@
             color: $green;
             font-weight: bold;
         }
+
+        .mobileLink {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -97,8 +98,147 @@
     p {
         margin: 0;
     }
+
+    &Two {
+        border-bottom: 5px solid $green;
+    }
+
 }
 
-.comment:last-of-type {
-    border-bottom: 5px solid $green;
+.blogPage {
+    @include mq1000 {
+        aside
+        { 
+            ul {
+            padding-left: 10px;
+            text-align: left;
+            }
+
+            li {
+                padding-left: 5px;
+            }
+        }
+    }
+
+    @include mq800 {
+
+        h2 {
+            font-size: calc(1.2rem + 1.8vw);
+        }
+
+        h3 {
+            font-size: calc(0.5rem + 1.5vw);
+        }
+
+        aside {
+            text-align: center;
+        }
+
+        .wrapper {
+            width:95%;
+        }
+
+        .aboutMe,
+        .recentPosts,
+        .fullBlogPost,
+        .comment {
+            padding: 15px;
+        }
+    }
+    
+    @include mq680 {
+
+
+        .wrapper {
+            width:98%;
+            flex-direction: column;
+        }
+
+        header {
+            height: 30vh;
+        }
+
+        main {
+            order: 0;
+            width:100%;
+            margin: 0;
+            padding-top: 20px;
+        }
+        aside {
+            @include flexRow(space-between);
+            align-items: stretch;
+            width: 100%;
+            margin: 0;
+            padding: 20px 20px 0;
+
+            img {
+                float:left;
+                width: 50%;
+            }
+
+            .aboutMe {
+                width: 65%;
+                margin-bottom: 0;
+            }
+
+            .recentPosts {
+                width: 30%;
+            }
+
+        }
+    }
+
+    @include mq600 {
+        aside {
+            position: relative;
+            @include flexCol;
+
+            p {
+                font-size: 1.55rem;
+            }
+
+            img {
+                width:150px;
+                margin-right: 20px;
+            }
+
+            
+            .aboutMe {
+                text-align: left;
+                padding-bottom: 0;
+                width: 100%;
+            }
+
+            .recentPosts {
+                margin-top: 20px;
+                width: 100%;
+                ul {
+                    @include flexRow(space-around);
+                    flex-wrap: wrap;
+                    padding-left:0;
+                }
+                li {
+                    text-align: center;
+                    padding-left:0;
+                    list-style-type: none;
+                    // width: 50%;
+                }
+            }
+        } 
+    }
+
+    @include mq500 {
+        aside .recentPosts {
+            ul {
+            display: block;
+            }
+            li {
+                text-align: left;
+                margin-left: 25%;
+                list-style-type: disc;
+            }
+        }
+    }
 }
+
+
