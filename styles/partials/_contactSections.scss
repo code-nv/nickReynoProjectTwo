@@ -57,13 +57,35 @@
             
         }
         aside a {
-            // width:calc(25% - 21px);
             width: calc(50% - 21px);
             padding: 10px;
         }
     }
 
     @include mq680 {
+
+        main {
+            margin: 0;
+            width: 100%;
+        }
+        aside {
+            margin: 10px 0;
+            width: 100%;
+
+            a {
+                width: 25%;
+            }
+        }
+
+
+        .address {
+            font-size: 1.5rem;
+        }
+
+        p.email {
+            margin: 5px;
+            font-size: 2rem;
+        }
         
         .wrapper {
             width:98%;

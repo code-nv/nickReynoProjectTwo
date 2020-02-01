@@ -454,6 +454,11 @@ nav a {
   width: 10rem;
 }
 
+.hamburgerBox,
+.hamburgerContainer {
+  display: none;
+}
+
 .blogPage header {
   background: url(../assets/blog-image-1.jpg);
 }
@@ -524,10 +529,11 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 }
 
 @media (max-width: 1000px) {
+  .headerNav,
   nav {
     font-size: calc(0.7rem + 1vw);
   }
-  nav h2 {
+  h2 {
     font-size: calc(1.5rem + 1.8vw);
   }
   .home .titlePhoto {
@@ -538,6 +544,10 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 }
 
 @media (max-width: 800px) {
+  nav a,
+  .header nav a {
+    padding: 20px 2vw;
+  }
   .headerFlexParent {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -550,6 +560,77 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   .header .profilePhoto {
     right: 0;
     top: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  nav ul,
+  .headerNav ul {
+    left: 200vw;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: #345231;
+    z-index: 1;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 2rem;
+  }
+  .navWillow {
+    margin: 40px 0 20px;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    font-size: 5rem;
+  }
+  header,
+  .blogHeader,
+  .contactHeader {
+    padding-top: 50px;
+  }
+  .hamburgerBox,
+  .hamburgerContainer {
+    display: block;
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 2;
+  }
+  .hamburgerBox {
+    display: none;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 30px;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin: 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  input:checked ~ label .bar1 {
+    -webkit-transform: translateY(4px) rotate(45deg);
+            transform: translateY(4px) rotate(45deg);
+  }
+  input:checked ~ label .bar2 {
+    border: 0;
+  }
+  input:checked ~ label .bar3 {
+    -webkit-transform: translateY(-4px) rotate(-45deg);
+            transform: translateY(-4px) rotate(-45deg);
+  }
+  input:checked ~ ul {
+    visibility: visible;
+    left: 0;
   }
 }
 
@@ -1112,6 +1193,9 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 }
 
 @media (max-width: 1000px) {
+  .blogPage nav h2 {
+    font-size: calc(1.5rem + 1.8vw);
+  }
   .blogPage aside ul {
     padding-left: 10px;
     text-align: left;
@@ -1435,6 +1519,24 @@ form .primaryLink {
 }
 
 @media (max-width: 680px) {
+  .contactPage main {
+    margin: 0;
+    width: 100%;
+  }
+  .contactPage aside {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .contactPage aside a {
+    width: 25%;
+  }
+  .contactPage .address {
+    font-size: 1.5rem;
+  }
+  .contactPage p.email, .contactPage .blogPage aside li.email, .blogPage aside .contactPage li.email, .contactPage .email.address {
+    margin: 5px;
+    font-size: 2rem;
+  }
   .contactPage .wrapper {
     width: 98%;
     -webkit-box-orient: vertical;

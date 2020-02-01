@@ -107,6 +107,9 @@
 
 .blogPage {
     @include mq1000 {
+        nav h2 {
+            font-size: calc(1.5rem + 1.8vw);
+        }
         aside
         { 
             ul {
