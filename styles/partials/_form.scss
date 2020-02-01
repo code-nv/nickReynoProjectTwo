@@ -30,4 +30,8 @@ form {
     .primaryLink {
         width: 100%;
     }
+
+    @include mq800 {
+        font-size: 1.5rem;
+    }
 }

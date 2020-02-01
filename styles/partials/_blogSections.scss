@@ -148,6 +148,10 @@
     
     @include mq680 {
 
+        h3 {
+            font-size:calc(1rem + 1.5vw);
+        }
+
 
         .wrapper {
             width:98%;
@@ -189,6 +193,7 @@
     }
 
     @include mq600 {
+
         aside {
             position: relative;
             @include flexCol;
@@ -213,15 +218,22 @@
                 margin-top: 20px;
                 width: 100%;
                 ul {
-                    @include flexRow(space-around);
+                    @include flexRow(space-between);
                     flex-wrap: wrap;
                     padding-left:0;
                 }
                 li {
+                    position: relative;
                     text-align: center;
                     padding-left:0;
                     list-style-type: none;
-                    // width: 50%;
+                    width: 50%;
+                }
+
+                li:nth-of-type(odd):after {
+                    content: "🍃"; 
+                    position: absolute;
+                    right: 0;
                 }
             }
         } 
@@ -229,13 +241,33 @@
 
     @include mq500 {
         aside .recentPosts {
+            
+            padding: 10px;
+            width: 60vw;
+            align-self: flex-start;
+            box-shadow: 2vw 2vw $green, 30vw 2vw $green;
+
+            h3 {
+                text-align: left;
+                margin-left: 20px;
+            }
             ul {
             display: block;
             }
             li {
                 text-align: left;
-                margin-left: 25%;
-                list-style-type: disc;
+                margin-left: 20px;
+                width:100%;
+            }
+
+            li:nth-of-type(odd):after {
+                content: none;
+            }
+
+            li:before {
+                content: "🌿";
+                position: absolute;
+                left: -18px;
             }
         }
     }

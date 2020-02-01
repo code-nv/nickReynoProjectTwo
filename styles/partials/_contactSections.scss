@@ -35,3 +35,43 @@
     color: $pine;
     font-size: 2rem;
 }
+
+.contactPage {
+    @include mq1000 {
+        
+        aside {
+            width: 35%;
+        }
+
+        main {
+            width: 60%;
+        }
+    }
+
+    @include mq800 {
+        aside {
+            text-align: center;
+        }
+        .asideSocialMedia {
+            justify-content: center;
+            
+        }
+        aside a {
+            // width:calc(25% - 21px);
+            width: calc(50% - 21px);
+            padding: 10px;
+        }
+    }
+
+    @include mq680 {
+        
+        .wrapper {
+            width:98%;
+            flex-direction: column;
+        }
+
+        header {
+            height: 30vh;
+        }
+    }
+}
