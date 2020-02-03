@@ -1,3 +1,18 @@
+//accesibility is important
+.visuallyHidden:focus {
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width: auto;
+    height: 2.7rem;
+    padding: 2px;
+    background-color: paleturquoise;
+    outline: 2px solid $black;
+    font-size: 2rem;
+    color:black;
+    z-index: 5;
+}
+
 nav {
     font-family: $bodyStack;
     color: $white;
@@ -13,18 +28,21 @@ nav {
     a {
         padding: 20px 1.5vw;
     }
+    
+    .currentPage {
+        color: $accent;
+    }
 }
 
+//main page header styles
 .header {
     background: $pine;
-    // height: 85vh;
 
     &FlexParent {
         @include flexRow;
     }
 
     .profilePhoto {
-        // height: 78vh;
         width: 30vw;
         min-width: 20rem;
         position: relative;
@@ -37,10 +55,11 @@ nav {
         position: absolute;
         top:-3rem;
         left:-4rem;
-        // height: calc(10rem + 3vw);
         width:10rem;
     }
 }
+
+//AMMBURGERRR
 .hamburgerBox,
 .hamburgerContainer {
     display:none;
@@ -54,6 +73,7 @@ nav {
     background: url(../assets/contact-image-1.jpg);
 }
 
+// secondary page header styles
 .blogPage,
 .contactPage {
 
@@ -69,13 +89,9 @@ nav {
     nav {
         background: $pine;
     }
-    
-
 }
 
-
 // footer styles
-
 .home footer {
     margin-top: 0;
 }
@@ -97,7 +113,6 @@ footer {
 }
 
 // MEDIA QUERIES
-
 @include mq1000 {
 
     .headerNav,
@@ -139,17 +154,17 @@ footer {
 
     nav ul,
     .headerNav ul {
-        left:200vw;
         position: fixed;
+        top: 0;
+        left:200vw;
         width: 100vw;
         height: 100vh;
-        top: 0;
         background: $pine;
-        z-index: 1;
-        transition: left 0.3s;
         flex-direction: column;
         justify-content: flex-start;
         font-size: 2rem;
+        transition: left 0.3s;
+        z-index: 1;
     }
 
     .navWillow {
@@ -177,19 +192,26 @@ footer {
         display: none;
     }
 
+    //three hamburger bars to animate the x transition
     .bar1,
     .bar2,
     .bar3 {
         width: 30px;
+        margin: 4px;
         border: 2px solid white;
         border-radius: 50px;
-        margin: 4px;
+        box-shadow: 0px 0px 0px 1px $pine;
         transition: all 0.3s;
+    }
+
+    input:checked ~ label .bar {
+        box-shadow: none;
     }
 
     input:checked ~ label .bar1 {
         transform: translateY(4px) rotate(45deg);
     }
+
     input:checked ~ label .bar2 {
         border: 0;
     }
@@ -202,5 +224,4 @@ footer {
         visibility: visible;
         left:0;
     }
-
-}
+} //end media query

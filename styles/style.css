@@ -39,7 +39,8 @@ pre {
   font-size: 1em;
 }
 
-a {
+a, .blogPage aside .recentPostsLink:hover,
+.blogPage aside .recentPostsLink:focus {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -316,7 +317,8 @@ img {
   padding: 0;
 }
 
-a {
+a, .blogPage aside .recentPostsLink:hover,
+.blogPage aside .recentPostsLink:focus {
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -336,6 +338,12 @@ p, .blogPage aside li, .address {
   font-family: "Abril Fatface", cursive;
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+
+.primaryLink:hover,
+.primaryLink:focus {
+  color: #F6F6F6;
+  background: #709B6B;
 }
 
 .wrapper {
@@ -388,6 +396,20 @@ aside {
   }
 }
 
+.visuallyHidden:focus {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: auto;
+  height: 2.7rem;
+  padding: 2px;
+  background-color: paleturquoise;
+  outline: 2px solid #1F1F1F;
+  font-size: 2rem;
+  color: black;
+  z-index: 5;
+}
+
 nav {
   font-family: "Montserrat", sans-serif;
   color: #F6F6F6;
@@ -413,8 +435,13 @@ nav ul {
           align-items: center;
 }
 
-nav a {
+nav a, nav .blogPage aside .recentPostsLink:hover, .blogPage aside nav .recentPostsLink:hover,
+nav .blogPage aside .recentPostsLink:focus, .blogPage aside nav .recentPostsLink:focus {
   padding: 20px 1.5vw;
+}
+
+nav .currentPage {
+  color: #E4A436;
 }
 
 .header {
@@ -544,8 +571,13 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 }
 
 @media (max-width: 800px) {
-  nav a,
-  .header nav a {
+  nav a, nav .blogPage aside .recentPostsLink:hover, .blogPage aside nav .recentPostsLink:hover,
+  nav .blogPage aside .recentPostsLink:focus, .blogPage aside nav .recentPostsLink:focus,
+  .header nav a,
+  .header nav .blogPage aside .recentPostsLink:hover,
+  .blogPage aside .header nav .recentPostsLink:hover,
+  .header nav .blogPage aside .recentPostsLink:focus,
+  .blogPage aside .header nav .recentPostsLink:focus {
     padding: 20px 2vw;
   }
   .headerFlexParent {
@@ -566,15 +598,12 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 @media (max-width: 680px) {
   nav ul,
   .headerNav ul {
-    left: 200vw;
     position: fixed;
+    top: 0;
+    left: 200vw;
     width: 100vw;
     height: 100vh;
-    top: 0;
     background: #345231;
-    z-index: 1;
-    -webkit-transition: left 0.3s;
-    transition: left 0.3s;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -583,6 +612,9 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
         -ms-flex-pack: start;
             justify-content: flex-start;
     font-size: 2rem;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
+    z-index: 1;
   }
   .navWillow {
     margin: 40px 0 20px;
@@ -611,11 +643,17 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   .bar2,
   .bar3 {
     width: 30px;
+    margin: 4px;
     border: 2px solid white;
     border-radius: 50px;
-    margin: 4px;
+    -webkit-box-shadow: 0px 0px 0px 1px #345231;
+            box-shadow: 0px 0px 0px 1px #345231;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+  }
+  input:checked ~ label .bar {
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   input:checked ~ label .bar1 {
     -webkit-transform: translateY(4px) rotate(45deg);
@@ -632,6 +670,11 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
     visibility: visible;
     left: 0;
   }
+}
+
+.homeMain {
+  width: 100vw;
+  margin: 0;
 }
 
 .about {
@@ -993,6 +1036,13 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   margin-top: 5px;
 }
 
+.contact a:hover, .contact .blogPage aside .recentPostsLink:hover, .blogPage aside .contact .recentPostsLink:hover,
+.contact a:focus,
+.contact .blogPage aside .recentPostsLink:focus,
+.blogPage aside .contact .recentPostsLink:focus {
+  color: #E4A436;
+}
+
 .contact ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1131,9 +1181,15 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   margin: 0;
 }
 
-.blogPage aside a {
+.blogPage aside a, .blogPage aside .recentPostsLink:hover,
+.blogPage aside .recentPostsLink:focus {
   color: #709B6B;
   font-weight: bold;
+}
+
+.blogPage aside .recentPostsLink {
+  color: inherit;
+  font-weight: normal;
 }
 
 .blogPage aside .mobileLink {
@@ -1348,13 +1404,17 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 }
 
 @media (max-width: 500px) {
+  .blogPage aside .aboutMe {
+    -webkit-box-shadow: 2vw 2vw #345231, -6vw 2vw #345231;
+            box-shadow: 2vw 2vw #345231, -6vw 2vw #345231;
+  }
   .blogPage aside .recentPosts {
     padding: 10px;
     width: 60vw;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    -webkit-box-shadow: 2vw 2vw #709B6B, 30vw 2vw #709B6B;
-            box-shadow: 2vw 2vw #709B6B, 30vw 2vw #709B6B;
+    -webkit-box-shadow: -2vw 2vw #709B6B, 35vw 2vw #709B6B;
+            box-shadow: -2vw 2vw #709B6B, 35vw 2vw #709B6B;
   }
   .blogPage aside .recentPosts h3 {
     text-align: left;
@@ -1372,9 +1432,15 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
     content: none;
   }
   .blogPage aside .recentPosts li:before {
-    content: "🌿";
+    content: '';
     position: absolute;
-    left: -18px;
+    background: url(../assets/ACEA.png);
+    background-position: center;
+    background-size: contain;
+    left: -20px;
+    top: 4px;
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -1481,7 +1547,8 @@ form .primaryLink {
           align-items: center;
 }
 
-.asideSocialMedia a {
+.asideSocialMedia a, .asideSocialMedia .blogPage aside .recentPostsLink:hover, .blogPage aside .asideSocialMedia .recentPostsLink:hover,
+.asideSocialMedia .blogPage aside .recentPostsLink:focus, .blogPage aside .asideSocialMedia .recentPostsLink:focus {
   padding: 0 10px;
 }
 
@@ -1492,6 +1559,10 @@ form .primaryLink {
 .socialIcons {
   color: #345231;
   font-size: 2rem;
+}
+
+.socialIcons:hover {
+  color: #E4A436;
 }
 
 @media (max-width: 1000px) {
@@ -1512,7 +1583,8 @@ form .primaryLink {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .contactPage aside a {
+  .contactPage aside a, .contactPage .blogPage aside .recentPostsLink:hover, .blogPage .contactPage aside .recentPostsLink:hover,
+  .contactPage .blogPage aside .recentPostsLink:focus, .blogPage .contactPage aside .recentPostsLink:focus {
     width: calc(50% - 21px);
     padding: 10px;
   }
@@ -1527,7 +1599,8 @@ form .primaryLink {
     margin: 10px 0;
     width: 100%;
   }
-  .contactPage aside a {
+  .contactPage aside a, .contactPage .blogPage aside .recentPostsLink:hover, .blogPage .contactPage aside .recentPostsLink:hover,
+  .contactPage .blogPage aside .recentPostsLink:focus, .blogPage .contactPage aside .recentPostsLink:focus {
     width: 25%;
   }
   .contactPage .address {

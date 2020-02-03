@@ -4,15 +4,16 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Home</title>
-    <script src='https://kit.fontawesome.com/8ffef1b7fa.js' crossorigin='anonymous'></script>
+    <title>See Willow</title>
 
+    <script src='https://kit.fontawesome.com/8ffef1b7fa.js' crossorigin='anonymous'></script>
 
     <link rel='stylesheet' href='./styles/style.css'>
 
 </head>
 <body id="home" class="home">
     <header class="header">
+        <a href="#about" class="visuallyHidden">skip to main content</a>
         <nav>
             <input type="checkbox" name="mobileMenu" id="mobileMenu" class="hamburgerBox">
             <label class="hamburgerContainer" for="mobileMenu">
@@ -21,7 +22,7 @@
                 <div class="bar bar3"></div>
             </label>
             <ul>
-                <li><a href='#home'>Home</a></li>
+                <li><a class="currentPage" href='#home'>Home</a></li>
                 <li><a href='#about'>About</a></li>
                 <li class="navWillow"><h2>willow</h2></li>
                 <li><a href='./blog.html'>blog</a></li>
@@ -36,7 +37,7 @@
             <img class="profilePhoto" src="./assets/home-image-1.jpg" alt="A picture of me (Willow) standing between my favourite ferns in a sweet mustard yellow jacket I got from value village">
         </div>
     </header>
-
+    <main class="homeMain">
         <section class="about" id="about">
             <div class="wrapper">
                 <h2>Who’s Willow?</h2>
@@ -84,7 +85,7 @@
         <div class="styleDivider">
             <!-- there's no way that image is content -->
         </div>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="wrapper">
                 <img src="./assets/home-image-6.jpg" alt="two lane country road winding through misty forest">
                 <img src="./assets/home-image-7.jpg" alt="turqoise bowl of orange citrus fruits">
@@ -96,22 +97,22 @@
                 <ul>
                     <li class= "clearfix">
                         <i class="fas fa-image contactIcon"></i>
-                        <h4>photos</h4>
+                        <h4><a href="#gallery">photos</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit ipsa quasi molestias nihil modi blanditiis impedit mollitia alias dicta.</p>
                     </li>
                     <li class= "clearfix">
                         <i class="fas fa-user contactIcon"></i>
-                        <h4>about</h4>
+                        <h4><a href="#about">about</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit ipsa quasi molestias nihil modi blanditiis impedit mollitia alias dicta.</p>
                     </li>
                     <li class= "clearfix">
                         <i class="fas fa-desktop contactIcon"></i>
-                        <h4>blog</h4>
+                        <h4><a href="./blog.html">blog</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit ipsa quasi molestias nihil modi blanditiis impedit mollitia alias dicta.</p>
                     </li>
                     <li class= "clearfix">
                         <i class="fas fa-phone contactIcon"></i>
-                        <h4>contact me</h4>
+                        <h4><a href="./contact.html">contact me</a></h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit ipsa quasi molestias nihil modi blanditiis impedit mollitia alias dicta.</p>
                     </li>
                 </ul>
@@ -123,5 +124,6 @@
         <footer>
             <p>Copyright &copy 2020 Nick Reyno</p>
         </footer>
+    </main>
 </body>
 </html>

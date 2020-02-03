@@ -23,7 +23,6 @@
     a {
         padding: 0 10px;
     }
-
 }
 
 .address {
@@ -36,7 +35,12 @@
     font-size: 2rem;
 }
 
+.socialIcons:hover {
+    color: $accent;
+}
+
 .contactPage {
+
     @include mq1000 {
         
         aside {
@@ -48,19 +52,22 @@
         }
     }
 
+
     @include mq800 {
         aside {
             text-align: center;
         }
+
         .asideSocialMedia {
-            justify-content: center;
-            
+            justify-content: center; 
         }
+
         aside a {
             width: calc(50% - 21px);
             padding: 10px;
         }
     }
+
 
     @include mq680 {
 
@@ -68,6 +75,7 @@
             margin: 0;
             width: 100%;
         }
+
         aside {
             margin: 10px 0;
             width: 100%;
@@ -76,7 +84,6 @@
                 width: 25%;
             }
         }
-
 
         .address {
             font-size: 1.5rem;
@@ -96,4 +103,4 @@
             height: 30vh;
         }
     }
-}
+} //end of .contactPage specficity

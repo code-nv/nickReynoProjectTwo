@@ -60,6 +60,16 @@
             font-weight: bold;
         }
 
+        .recentPostsLink {
+            color: inherit;
+            font-weight: normal;
+        }
+
+        .recentPostsLink:hover,
+        .recentPostsLink:focus {
+            @extend a;
+        }
+
         .mobileLink {
             display: none;
         }
@@ -68,8 +78,8 @@
             width: 100%;
             margin-bottom: 30px;
         }
-    }
-}
+    } //end of aside
+} //end of .blogPage
 
 .fullBlogPost {
     padding: 30px;
@@ -102,8 +112,7 @@
     &Two {
         border-bottom: 5px solid $green;
     }
-
-}
+} //end of .comment
 
 .blogPage {
     @include mq1000 {
@@ -155,7 +164,6 @@
             font-size:calc(1rem + 1.5vw);
         }
 
-
         .wrapper {
             width:98%;
             flex-direction: column;
@@ -194,7 +202,7 @@
 
         }
     }
-
+// reminder all media queries under .blogPage nesting
     @include mq600 {
 
         aside {
@@ -238,25 +246,29 @@
                     position: absolute;
                     right: 0;
                 }
-            }
-        } 
-    }
+            } //end of recent posts
+        } //end of aside
+    } //end of mq600 media
 
     @include mq500 {
+        aside .aboutMe {
+            box-shadow: 2vw 2vw $pine, -6vw 2vw $pine;
+        }
         aside .recentPosts {
-            
             padding: 10px;
             width: 60vw;
             align-self: flex-start;
-            box-shadow: 2vw 2vw $green, 30vw 2vw $green;
+            box-shadow: -2vw 2vw $green, 35vw 2vw $green;
 
             h3 {
                 text-align: left;
                 margin-left: 20px;
             }
+
             ul {
             display: block;
             }
+
             li {
                 text-align: left;
                 margin-left: 20px;
@@ -268,12 +280,16 @@
             }
 
             li:before {
-                content: "🌿";
+                content: '';
                 position: absolute;
-                left: -18px;
+                background: url(../assets/ACEA.png); //props to you if you recognize this easter egg
+                background-position: center;
+                background-size: contain;
+                left: -20px;
+                top: 4px;
+                width: 15px;
+                height: 15px;
             }
-        }
-    }
-}
-
-
+        } //end of aside .recentposts
+    } //end of mq500
+} //end of .blogPage specificity

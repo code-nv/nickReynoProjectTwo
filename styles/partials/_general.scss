@@ -1,15 +1,15 @@
+//importing google fonts
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:400,700&display=swap');
 
-
+// setting that default
 html {
     font-size: 62.5%;
-    letter-spacing: 1px;
+    letter-spacing: 1px; //the entire website has this aside from p tags
 }
 
 body {
     background: $white;
 }
-
 
 h1,
 h2,
@@ -24,7 +24,6 @@ h5 {
 
 h1 {
     color: $white;
-    // font-size: calc(7rem + 4vw);
     font-size: 11rem;
     position: relative;
 }
@@ -33,6 +32,7 @@ h2 {
     font-size: calc(1rem + 1.8vw);
 }
 
+//the h1's on other pages (Colin approved 1 h1 per page)
 .title {
     position: relative;
     top:1rem;
@@ -85,6 +85,12 @@ p {
     text-transform: uppercase;
 }
 
+.primaryLink:hover,
+.primaryLink:focus {
+    color: $white;
+    background: $green;
+}
+
 .wrapper {
     max-width: 1200px;
     width: 80vw;
@@ -95,16 +101,20 @@ p {
     background: $white;
 }
 
+//focus on blog and contact page
 main {
     width: 65%;
     margin-left: 5%;
     background: $white;
 }
 
+//likewise
 aside {
     width: 30%;
 }
 
+
+// font focused media queries
 @include mq1000 {
 
     .home {

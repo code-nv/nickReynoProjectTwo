@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog</title>
+    <title>Read Willow</title>
 
     <script src='https://kit.fontawesome.com/8ffef1b7fa.js' crossorigin='anonymous'></script>
-
-
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat:400,700&display=swap" rel="stylesheet">
-
 
     <link rel='stylesheet' href='./styles/style.css'>
 
 </head>
 <body class="blogPage" id="blog">
     <header class="header blogHeader">
+        <a href="#fullBlogPost" class="visuallyHidden">skip to main content</a>
         <nav>
             <input type="checkbox" name="mobileMenu" id="mobileMenu" class="hamburgerBox">
             <label class="hamburgerContainer" for="mobileMenu">
@@ -28,7 +25,7 @@
                 <li><a href='./home.html'>Home</a></li>
                 <li><a href='#about'>About</a></li>
                 <li class="navWillow"><h2>willow</h2></li>
-                <li><a href='#blog'>blog</a></li>
+                <li><a class="currentPage" href='#blog'>blog</a></li>
                 <li><a href='./contact.html'>Contact</a></li>
             </ul>
         </nav>
@@ -46,15 +43,15 @@
             <div class="recentPosts">
                 <h3>recent posts</h3>
                 <ul>
-                    <li>Donec facilis tortur ut</li>
-                    <li>Augue lacinia at viverra</li>
-                    <li>Semper sed sapien</li>
-                    <li>Scelerisque nec pharet</li>
+                    <li><a href="#fullBlogPost" class="recentPostsLink">Donec facilis tortur ut</a></li>
+                    <li><a href="#fullBlogPost" class="recentPostsLink">Augue lacinia at viverra</a></li>
+                    <li><a href="#fullBlogPost" class="recentPostsLink">Semper sed sapien</a></li>
+                    <li><a href="#fullBlogPost" class="recentPostsLink">Scelerisque nec pharet</a></li>
                 </ul>
             </div>
         </aside>
         <main>
-            <article class="fullBlogPost">
+            <article class="fullBlogPost" id="fullBlogPost">
                 <h2>my favourite travel desitnations</h2>
                 <p> Monday <time datetime="2018-10-8">October 8th, 2018 </time>by Willow </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptate debitis, libero ipsum sapiente unde inventore vero, praesentium reprehenderit incidunt laudantium fugit similique possimus mollitia eaque, itaque fugiat! Atque, aut?</p>
