@@ -1090,6 +1090,10 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
   .contact {
     padding: 7vw 0 0 0;
   }
+  .contact .fas {
+    position: relative;
+    top: -10px;
+  }
   .contact h4 {
     font-size: calc(1rem + 1.5vw);
   }
@@ -1405,16 +1409,15 @@ footer p, footer .blogPage aside li, .blogPage aside footer li, footer .address 
 
 @media (max-width: 500px) {
   .blogPage aside .aboutMe {
-    -webkit-box-shadow: 2vw 2vw #345231, -6vw 2vw #345231;
-            box-shadow: 2vw 2vw #345231, -6vw 2vw #345231;
+    -webkit-box-shadow: 2vw 2vw #345231, -7vw 2vw #345231;
+            box-shadow: 2vw 2vw #345231, -7vw 2vw #345231;
   }
   .blogPage aside .recentPosts {
     padding: 10px;
-    width: 60vw;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    -webkit-box-shadow: -2vw 2vw #709B6B, 35vw 2vw #709B6B;
-            box-shadow: -2vw 2vw #709B6B, 35vw 2vw #709B6B;
+    -webkit-box-shadow: -2vw 2vw #709B6B, 7vw 2vw #709B6B;
+            box-shadow: -2vw 2vw #709B6B, 7vw 2vw #709B6B;
   }
   .blogPage aside .recentPosts h3 {
     text-align: left;

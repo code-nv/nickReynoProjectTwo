@@ -327,6 +327,12 @@
     @include mq680 {
         padding: 7vw 0 0 0;
 
+        // contact icons
+        .fas {
+            position: relative;
+            top:-10px;
+        }
+
         h4 {
             font-size: calc(1rem + 1.5vw);
         }

@@ -252,13 +252,13 @@
 
     @include mq500 {
         aside .aboutMe {
-            box-shadow: 2vw 2vw $pine, -6vw 2vw $pine;
+            box-shadow: 2vw 2vw $pine, -7vw 2vw $pine;
         }
         aside .recentPosts {
             padding: 10px;
-            width: 60vw;
+            // width: 60vw;
             align-self: flex-start;
-            box-shadow: -2vw 2vw $green, 35vw 2vw $green;
+            box-shadow: -2vw 2vw $green, 7vw 2vw $green;
 
             h3 {
                 text-align: left;
